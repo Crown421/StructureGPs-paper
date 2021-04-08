@@ -18,9 +18,10 @@ function trueODEfunc(u,p,t)
     trueODEfunc!(du, u, p, t)
 end
 
-if isfile("../data/spiral.jld2")
-    println("Found file from setup, loading ...")
-    @load "../data/spiral.jld2" sol hvars extraneuralsol fitc_mstd fitc_zero_mstd datatsteps ode_data Z fitc_gpODE fitc_zero_goODE LTsol LTgpOde1 LTgpOde2 LTnnODE realU fitcU fitc_zero_U npODEU nn_U Zqg Uqg ts
+data_file = normpath(joinpath(@__DIR__, "../data/spiral.jld2"))
+if isfile(data_file)
+    println("Found file from setup, loading $data_file")
+    @load data_file sol hvars extraneuralsol fitc_mstd fitc_zero_mstd datatsteps ode_data Z fitc_gpODE fitc_zero_goODE LTsol LTgpOde1 LTgpOde2 LTnnODE realU fitcU fitc_zero_U npODEU nn_U Zqg Uqg ts
 else
     include("setup_spiral.jl")
 end
@@ -122,7 +123,8 @@ plot!(p, xlabel = LaTeXString("\$ x_1 \$"), ylabel = LaTeXString("\$ x_2 \$"), a
 completeplot = plot(p, punc, size = (800, 350), left_margin = ([0 5 5].*Plots.Measures.mm),
     legend = :none )
 
-savefig(completeplot, "../plots/cubedODE.pdf")
+plot1_file = normpath(joinpath(@__DIR__, "../plots/cubedODE.png"))
+savefig(completeplot, plot1_file)
 
 
 #####################################################################################################
@@ -162,5 +164,5 @@ LTp = plot(LTp1, LTp2, LTp3, LTp4, size = (400, 260), layout = (2,2))
 default(tickfont = (10, "serif"))
 LTp
 
-
-savefig(LTp, "../plots/longterm.pdf")
+plot2_file = normpath(joinpath(@__DIR__, "../plots/longterm.png"))
+savefig(LTp, plot2_file)
