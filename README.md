@@ -1,7 +1,7 @@
 # StructureGPs-paper
 
 This repository contains the code for the paper 
-*Learning ODE Models with Qualitative Structure Using Gaussian Processes* [(arXiv:2011.05364)](https://arxiv.org/abs/2011.05364). 
+*Learning ODE Models with Qualitative Structure Using Gaussian Processes*, CDC 2021 paper WeA01.3, presented on Wednesday 15.12.21 at 13:30 UTC.
 
 The packages in this repository will very soon be superseded by [GPDiffEq.jl](https://github.com/Crown421/GPDiffEq.jl).
 
