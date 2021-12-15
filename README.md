@@ -3,9 +3,10 @@
 This repository contains the code for the paper 
 *Learning ODE Models with Qualitative Structure Using Gaussian Processes* [(arXiv:2011.05364)](https://arxiv.org/abs/2011.05364). 
 
+The packages in this repository will very soon be superseded by [GPDiffEq.jl](https://github.com/Crown421/GPDiffEq.jl).
 
 ## Setup
-The code was run using Julia 1.5, but any higher version should also be compatible. To recreate the environment open a terminal in the repository and run
+This code is compatible with Julia 1.5 To recreate the environment open a terminal in the repository and run
 
 ```shell
     julia --project
